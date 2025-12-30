@@ -1,0 +1,157 @@
+/* --- Color Variables for easy adjustment --- */
+:root {
+    --deep-forest: #1B3022;   /* For text and headings */
+    --leaf-green: #2D5A3A;    /* For buttons and primary elements */
+    --soft-mint: #E9F2EB;     /* For light background sections */
+    --earth-orange: #C17339;  /* The orange from your logo */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--deep-forest);
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffffff; 
+    border-bottom: 5px solid var(--earth-orange);
+}
+
+.navbar .nav-link, .navbar .navbar-brand, .dropdown-item {
+    color: var(--leaf-green);
+}
+
+.navbar .nav-link:hover, .navbar .dropdown-item:hover {
+    color: var(--earth-orange) !important;
+}
+
+header {
+    background: #ffffff;
+    color: var(--deep-forest); /* Darker green for better readability */
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--leaf-green);
+    font-weight: 700;
+}
+
+/* Buttons: High Contrast Green */
+.btn-primary {
+    background-color: var(--leaf-green);
+    border-color: var(--leaf-green);
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--earth-orange);
+    border-color: var(--earth-orange);
+}
+
+/* Footer: The Darkest Tone */
+footer {
+    background: var(--deep-forest);
+    color: #ffffff;
+    padding: 2rem 0;
+}
+
+/* Section Backgrounds */
+#services {
+    background-color: var(--soft-mint); /* Very soft green to distinguish the section */
+}
+
+#target {
+    background-color: #FDF9F4; /* Very light warm cream to complement the orange */
+}
+
+/* Navigation Links */
+.nav-link, .drop-item {
+    color: var(--leaf-green) !important;
+    font-weight: 600;
+}
+
+/* --- Form Styling --- */
+.form-control {
+    border: 2px solid var(--soft-mint); /* Subtle green border */
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--leaf-green); /* Turns green on click */
+    box-shadow: 0 0 0 0.2rem rgba(45, 90, 58, 0.15);
+    outline: none;
+}
+
+label {
+    font-weight: 600;
+    color: var(--deep-forest);
+    margin-bottom: 0.5rem;
+}
+
+/* --- Table Styling --- */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--soft-mint);
+}
+
+.table thead {
+    background-color: var(--leaf-green);
+    color: #ffffff;
+}
+
+.table th {
+    padding: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--soft-mint); /* Soft green zebra stripes */
+}
+
+/* --- Card Styling --- */
+.card {
+    background: #ffffff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(27, 48, 34, 0.08); /* Soft green-tinted shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(27, 48, 34, 0.12);
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 2px solid var(--earth-orange); /* Orange accent line */
+    font-weight: 700;
+    color: var(--deep-forest);
+    padding: 1.25rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    color: var(--leaf-green);
+    margin-bottom: 1rem;
+}

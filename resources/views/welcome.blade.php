@@ -8,77 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #222;
-        }
-        /* Navbar colors */
-        .navbar {
-            background-color: #fff; /* Green */
-            border-bottom: 5px solid #FF9800;
-        }
-        .navbar .nav-link, .navbar .navbar-brand, .dropdown-item {
-            color: #2E7D32;
-        }
-        .navbar .nav-link:hover, .navbar .dropdown-item:hover {
-            color: #FF9800 !important; /* Orange */
-        }
-        header {
-            background: #fff; /* Green */
-            color: #2E7D32;
-            padding: 3rem 0;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 3rem;
-        }
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #2E7D32;
-        }
-        .icon-box {
-            font-size: 2rem;
-            color: #FF9800; /* Orange for icons */
-            margin-bottom: 0.5rem;
-        }
-        .card {
-            border-radius: 15px;
-        }
-        .btn-primary {
-            background-color: #2E7D32; /* Green */
-            border-color: #2E7D32;
-        }
-        .btn-primary:hover {
-            background-color: #FF9800; /* Orange on hover */
-            border-color: #FF9800;
-        }
-        .nav-link, .drop-item{
-            color: #2E7D32 !important;
-            font-weight: 600;
-            transform: scaleY(1.2);
-        }
-
-        footer {
-            background: #2E7D32; /* Green */
-            color: #fff;
-            padding: 2rem 0;
-        }
-
-        #target{
-            background-color: #f5f0eaff;
-        }
-
-        #services{
-            background-color: #b8f2bbff;
-        }
-
-        #units{
-            color: black !important;
-        }
-    </style>
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
@@ -89,7 +19,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto">
+        <img src="{{asset('images/logo.png')}}" alt="" width="100" height="100" class="d-inline-block align-text-top me-2">   
+        <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#vision"><i class="bi bi-bullseye"></i> Vision & Mission</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="unitsDropdown" role="button" data-bs-toggle="dropdown"><i class="bi bi-people-fill"></i> Target Groups</a>
@@ -300,7 +231,7 @@
                 </li>
                 
                 <li class="nav-item"><a class="nav-link" href="#partnership"><i class="bi bi bi-person-lines-fill"></i> Partnership</a></li>
-                <li class="nav-item"><a class="nav-link" href="#partnership"><i class="bi bi bi-box-arrow-in-right"></i> Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('login')}}"><i class="bi bi bi-box-arrow-in-right"></i> Login</a></li>
             </ul>
         </div>
     </div>
