@@ -20,6 +20,8 @@ body {
 
 .navbar .nav-link, .navbar .navbar-brand, .dropdown-item {
     color: var(--leaf-green);
+    font-weight: 600;
+    transform: scaleY(1.2) !important;
 }
 
 .navbar .nav-link:hover, .navbar .dropdown-item:hover {
@@ -154,4 +156,33 @@ label {
 .card-title {
     color: var(--leaf-green);
     margin-bottom: 1rem;
+}
+
+/* Header background with subtle overlay */
+.site-header {
+    position: relative;
+    background-image: url('/images/hfyf.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.site-header .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35); /* subtle dark overlay for readability */
+}
+
+.site-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    transform: scaleY(1.2);
+}
+
+@media (min-width: 768px) {
+    .site-header { min-height: 420px; }
+    .site-header h1 { font-size: 3rem; }
 }

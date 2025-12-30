@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hajiya Fatima Yahaya Foundation</title>
+    <title>HFYF ! Welcome</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('images/logo.png') }}" sizes="any">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -25,208 +28,58 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="unitsDropdown" role="button" data-bs-toggle="dropdown"><i class="bi bi-people-fill"></i> Target Groups</a>
                     <ul class="dropdown-menu" aria-labelledby="unitsDropdown">
+                        @foreach(\App\Models\TargetGroup::all() as $targetGroup)
                         <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-heart-pulse-fill me-2"></i>
-                                Orphans and widows, aged and incapacitated
+                            <a class="dropdown-item" href="#target">
+                                <i class="bi {{$targetGroup->icon}} me-2"></i>
+                                {{ $targetGroup->name }}
                             </a>
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-person-wheelchair me-2"></i>
-                                Sick and less privileged
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-house-heart-fill me-2"></i>
-                                Oppressed and victims of disaster
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-mortarboard-fill me-2"></i>
-                                Students and youths
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-people-fill me-2"></i>
-                                Women and vulnerable groups
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-geo-alt-fill me-2"></i>
-                                Internally displaced people
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-megaphone-fill me-2"></i>
-                                General public enlightenment and Da’awah workers
-                            </a>
-                        </li>
+                        @endforeach
+                        
                     </ul>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="unitsDropdown" role="button" data-bs-toggle="dropdown"><i class="bi bi-mortarboard-fill"></i> Units</a>
                     <ul class="dropdown-menu" aria-labelledby="unitsDropdown">
+                        @foreach(\App\Models\Unit::all() as $unit)
                         <li>
                             <a class="dropdown-item" href="#units">
-                                <i class="bi bi-mortarboard-fill me-2"></i>
-                                Education
+                                <i class="bi {{$unit->icon}} me-2"></i>
+                                {{ $unit->name }}
                             </a>
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-hospital-fill me-2"></i>
-                                Health
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-cpu-fill me-2"></i>
-                                Technology
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-people-fill me-2"></i>
-                                Social
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-moon-stars-fill me-2"></i>
-                                Religious
-                            </a>
-                        </li>
+                        @endforeach
                     </ul>
                 </li>
+
                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"><i class="bi bi-people-fill"></i> Services</a>
                     <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                        <li class="mb-2">
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-building-fill me-2"></i>
-                                Education and health institutions
+                        @foreach(\App\Models\Service::all() as $service)
+                        <li>
+                            <a class="dropdown-item" href="#services">
+                                <i class="bi {{$service->icon}} me-2"></i>
+                                {{ $service->name }}
                             </a>
                         </li>
-                        <li class="mb-2">
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-megaphone-fill me-2"></i>
-                                Continued education and public enlightenment
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-award-fill me-2"></i>
-                                Scholarship and student support
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-moon-stars-fill me-2"></i>
-                                Promotion of religious practice
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-journal-text me-2"></i>
-                                Research and publication
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-basket-fill me-2"></i>
-                                Foodstuff and cash assistance
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-hospital-fill me-2 "></i>
-                                Medical assistance
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-house-heart-fill me-2 "></i>
-                                Shelter and school material assistance
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-droplet-half me-2 "></i>
-                                Water supply and sanitary facilities
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-fire me-2 "></i>
-                                Free firefighting service
-                            </a>
-                        </li>
+                        @endforeach
+                        
                     </ul>
                         
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="establishmentsDropdown" role="button" data-bs-toggle="dropdown"><i class="bi bi-buildings"></i> Establishments</a>
                     <ul class="dropdown-menu" aria-labelledby="establishmentsDropdown">
+                        @foreach(\App\Models\Establishment::all() as $establishment)
                         <li>
                             <a class="dropdown-item" href="#units">
-                                <i class="bi bi-mortarboard-fill me-2"></i>
-                                Fatima College of Nursing Sciences
+                                <i class="bi {{$establishment->icon}} me-2"></i>
+                                {{ $establishment->name }}
                             </a>
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-hospital-fill me-2 "></i>
-                                Fatima Yahaya Hospital
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-tree-fill me-2 "></i>
-                                Fatima Farm
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-building-fill me-2 "></i>
-                                Fatima International School
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-book-fill me-2 "></i>
-                                Malam Yahaya Islamic Library
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-laptop-fill me-2"></i>
-                                Malam Yahaya Digital Technology Center
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-fire me-2"></i>
-                                Malam Yahaya Fire Service
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-house-fill me-2"></i>
-                                Zauren Malam Yahaya
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#units">
-                                <i class="bi bi-moon-stars-fill me-2"></i>
-                                Malam Yahaya Jumu’at Mosque
-                            </a>
-                        </li>
+                        @endforeach
                     </ul>
                 </li>
                 
@@ -237,10 +90,13 @@
     </div>
 </nav>
 
-<header>
-    <h1>Hajiya Fatima Yahaya Foundation</h1>
-    <p style="color:black;">A non-profit organization established in the spirit of humanity, generosity, and goodness, structured with defined objectives to provide social services through personal efforts, partnerships, and collaborations.</p>
-    <a href="#partnership" class="btn btn-primary btn-lg mt-3"><i class="bi bi bi-box-arrow-in-left"></i> Partner With Us</a>
+<header class="site-header">
+    <div class="overlay"></div>
+    <div class="container text-center text-white py-5" style="position:relative;z-index:2;">
+        <h1>Hajiya Fatima Yahaya Foundation</h1>
+        <p class="lead">A non-profit organization established in the spirit of humanity, generosity, and goodness, structured with defined objectives to provide social services through personal efforts, partnerships, and collaborations.</p>
+        <a href="#partnership" class="btn btn-primary btn-lg mt-3"><i class="bi bi-box-arrow-in-left"></i> Partner With Us</a>
+    </div>
 </header>
 
 <!-- Header -->
@@ -263,128 +119,133 @@
     </div>
 </section>
 
-<!-- Target Groups -->
-<section id="target">
-    <div class="container p-4">
-    <h2 class="section-title text text-center" style="color: #FF9800;"> Target Groups</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card p-3 h-100 shadow-sm">
-                <i class="bi bi-mortarboard-fill icon-box"></i>
-                <h5 class="card-title mt-2">Orphans and widows, aged and incapacitated</h5>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card p-3 h-100 shadow-sm">
-                <i class="bi bi-heart-fill icon-box"></i>
-                <h5 class="card-title mt-2">Sick and less privileged</h5>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card p-3 h-100 shadow-sm">
-                <i class="bi bi-currency-exchange icon-box"></i>
-                <h5 class="card-title mt-2">Oppressed and victims of disaster</h5>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card p-3 h-100 shadow-sm">
-                <i class="bi bi-coin icon-box"></i>
-                <h5 class="card-title mt-2">Students and youths</h5>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card p-3 h-100 shadow-sm">
-                <i class="bi bi-coin icon-box"></i>
-                <h5 class="card-title mt-2">Women and vulnerable groups</h5>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card p-3 h-100 shadow-sm">
-                <i class="bi bi-coin icon-box"></i>
-                <h5 class="card-title mt-2">Women and vulnerable groups</h5>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card p-3 h-100 shadow-sm">
-                <i class="bi bi-coin icon-box"></i>
-                <h5 class="card-title mt-2">Internally displaced people</h5>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card p-3 h-100 shadow-sm">
-                <i class="bi bi-coin icon-box"></i>
-                <h5 class="card-title mt-2">General public enlightenment and Da’awah workers</h5>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
 
 <!-- Units -->
 <section id="units" class="container my-5" >
     <h2 class="section-title text text-center" style="color: black !important;"> Our Units</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach(\App\Models\Unit::all() as $unit)
         <div class="col">
             <div class="card p-3 h-100 shadow-sm">
-                <i class="bi bi-mortarboard-fill icon-box"  style="color: black !important;"></i>
-                <h5 class="card-title mt-2">Educational Human Resources Development</h5>
-                <p class="card-text">Fatima College of Nursing Science, Fatima Yahaya International School, Fatima Yahaya Tahfiz Islamiyya School, Mallam Yahaya Islamic Library. <a href="">Read more..</a></p>
+                <i class="bi {{$unit->icon}} icon-box"></i>
+                <h5 class="card-title mt-2">{{$unit->name}}</h5>  
+                <p>{{$unit->description}}</p>  
             </div>
         </div>
+       @endforeach
+    </div>
+</section>
+
+<section id="establishments" class="container my-5">
+    <h2 class="section-title text text-center" style="color: black !important;"> Our Establishments</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach(\App\Models\Establishment::all() as $establishment)
         <div class="col">
-            <div class="card p-3 h-100 shadow-sm">
-                <i class="bi bi-heart-fill icon-box"  style="color: black !important;"></i>
-                <h5 class="card-title mt-2">Social and Humanitarian Services</h5>
-                <p class="card-text">Food and medical assistance, school materials, shelter, clothing, sanitary facilities, water supply, and free firefighting service. <a href="">Read more..</a></p>
+            <div class="card h-100 shadow-sm">
+                @if($establishment->image)
+                    <img src="{{ asset($establishment->image) }}" alt="{{ $establishment->name }}" class="img-fluid mb-2" style="height: 150px; object-fit: cover;">
+                @endif
+                <h5 class="p-3 card-title mt-2">{{$establishment->name}}</h5>  
+                <p class="p-3">{{$establishment->description}}</p>  
             </div>
         </div>
-        <div class="col">
-            <div class="card p-3 h-100 shadow-sm">
-                <i class="bi bi-currency-exchange icon-box"  style="color: black !important;"></i>
-                <h5 class="card-title mt-2">Economic Empowerment</h5>
-                <p class="card-text">Skills acquisition, youth and women empowerment, interest-free loans, and specific empowerment programs. <a href="">Read more..</a></p>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card p-3 h-100 shadow-sm">
-                <i class="bi bi-coin icon-box"  style="color: black !important;"></i>
-                <h5 class="card-title mt-2">Fundraising & Investment</h5>
-                <p class="card-text">Asset management, donations, revolving fund management, Zakah and endowment management. <a href="">Read more..</a></p>
-            </div>
-        </div>
+       @endforeach
     </div>
 </section>
 
 <!-- Services -->
 <section id="services">
     <div class="container p-4">
-        <h2 class="section-title"><i class="bi bi-tools"></i> Our Services</h2>
+        <h2 class="section-title text text-center">What we offer</h2>
         <div class="row g-4">
-            <div class="col-md-6">
-                <h5><i class="bi bi-book-fill"></i> Education & Human Resource Development</h5>
-                <ul>
-                    <li>Education and health institutions</li>
-                    <li>Continued education and public enlightenment</li>
-                    <li>Scholarship and student support</li>
-                    <li>Promotion of religious practice</li>
-                    <li>Research and publication</li>
-                </ul>
+            @foreach(\App\Models\Service::all() as $service)
+            <div class="col-md-4">
+                <div class="card p-3 h-100 shadow-sm">
+                    <i class="bi {{$service->icon}} icon-box"></i>
+                    <h5 class="card-title mt-2">{{$service->name}}</h5>
+                    <p class="card-text">{{$service->description}}</p>  
+                </div>
             </div>
-            <div class="col-md-6">
-                <h5><i class="bi bi-hospital-fill"></i> Social & Humanitarian Services</h5>
-                <ul>
-                    <li>Foodstuff and cash assistance</li>
-                    <li>Medical assistance</li>
-                    <li>Shelter and school material assistance</li>
-                    <li>Water supply and sanitary facilities</li>
-                    <li>Free firefighting service</li>
-                </ul>
+            @endforeach
+    </div>
+</section>
+<!-- Target Groups -->
+<section id="target">
+    <div class="container p-4">
+    <h2 class="section-title text text-center" style="color: #FF9800;"> Target Groups</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach(\App\Models\TargetGroup::all() as $targetGroup)
+        <div class="col">
+            <div class="card p-3 h-100 shadow-sm">
+                <i class="bi {{$targetGroup->icon}} icon-box"></i>
+                <h5 class="card-title mt-2">{{$targetGroup->name}}</h5>
+            </div>
+        </div>
+       @endforeach
+    </div>
+    </div>
+</section>
+<!-- Establishments -->
+
+
+
+
+<!-- Call to Partnership -->
+<!-- Governing Bodies -->
+<section id="governing" class="container my-5">
+    <h2 class="section-title text-center"><i class="bi bi-people-fill"></i> Governing Bodies</h2>
+    <p class="lead text-center">Our leadership team guiding the foundation's mission.</p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100 text-center p-3 shadow-sm">
+                <img src="{{ asset('images/team/chair.jpg') }}" alt="Hajiya Fatima Yahaya" class="rounded-circle mx-auto d-block" style="width:120px;height:120px;object-fit:cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Hajiya Fatima Yahaya</h5>
+                    <p class="text-muted">Founder & Chair</p>
+                    <p class="card-text small">Founder of the foundation with decades of community service experience focusing on education, health and humanitarian aid.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 text-center p-3 shadow-sm">
+                <img src="{{ asset('images/team/vice-chair.jpg') }}" alt="Dr. Amina"
+                     class="rounded-circle mx-auto d-block" style="width:120px;height:120px;object-fit:cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Dr. Amina Sule</h5>
+                    <p class="text-muted">Vice Chair</p>
+                    <p class="card-text small">Medical doctor and public health advocate leading our health outreach and clinical partnerships.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 text-center p-3 shadow-sm">
+                <img src="{{ asset('images/team/secretary.jpg') }}" alt="Malam Yahaya"
+                     class="rounded-circle mx-auto d-block" style="width:120px;height:120px;object-fit:cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Malam Yahaya</h5>
+                    <p class="text-muted">Secretary</p>
+                    <p class="card-text small">Administrator and education specialist responsible for program coordination and stakeholder engagement.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 text-center p-3 shadow-sm">
+                <img src="{{ asset('images/team/treasurer.jpg') }}" alt="Alhaji Musa"
+                     class="rounded-circle mx-auto d-block" style="width:120px;height:120px;object-fit:cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Alhaji Musa</h5>
+                    <p class="text-muted">Treasurer</p>
+                    <p class="card-text small">Finance professional overseeing funds management, reporting and accountability.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Call to Partnership -->
 <section id="partnership" class="container my-5 text-center">
     <h2 class="section-title"><i class="bi bi-handshake-fill"></i> Call for Partnership</h2>
     <p>Join us in empowering humanity through education, health, and social services. You can contribute through sponsorship, scholarships, donations, or supporting our programs for women and youth empowerment.</p>
@@ -394,6 +255,7 @@
 <!-- Footer -->
 <footer class="text-center">
     <p>&copy; 2025 Hajiya Fatima Yahaya Foundation, Sifawa. All Rights Reserved.</p>
+    <p>Powered by: <a href="https://www.mydtc.tech" target="_blank">Malam Yahaya Digital Technology Center, Sifawa</a></p>
     <div>
         <i class="bi bi-facebook mx-2"></i>
         <i class="bi bi-twitter mx-2"></i>

@@ -9,6 +9,9 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Custom CSS -->
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('images/logo.png') }}" sizes="any">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
 <body style="background-color: white;">
