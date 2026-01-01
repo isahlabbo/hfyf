@@ -10,6 +10,7 @@ use Database\Seeders\ServicesSeeder;
 use Database\Seeders\TargetGroupsSeeder;
 use Database\Seeders\EstablishmentsSeeder;
 use Database\Seeders\NewsSeeder;
+use Database\Seeders\JobOpeningsSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,6 +31,7 @@ class DatabaseSeeder extends Seeder
             ServicesSeeder::class,
             TargetGroupsSeeder::class,
             EstablishmentsSeeder::class,
+            JobOpeningsSeeder::class,
             NewsSeeder::class,
         ]);
     }

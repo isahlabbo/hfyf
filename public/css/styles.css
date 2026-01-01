@@ -186,3 +186,14 @@ label {
     .site-header { min-height: 420px; }
     .site-header h1 { font-size: 3rem; }
 }
+
+/* Job CTA banner in header */
+.job-cta {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+}
+.job-cta h5 { margin: 0; color: #fff; font-weight: 700; }
+.job-cta small { color: #fff; opacity: 0.9; }
+.job-cta .btn-warning { background-color: #FFC107; border-color: #FFC107; color: #1b1b1b; }

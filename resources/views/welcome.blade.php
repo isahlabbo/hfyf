@@ -93,9 +93,23 @@
 <header class="site-header">
     <div class="overlay"></div>
     <div class="container text-center text-white py-5" style="position:relative;z-index:2;">
+        @php
+            $hasJobs = \App\Models\JobOpening::whereNotNull('published_at')->exists();
+        @endphp
+
         <h1>Hajiya Fatima Yahaya Foundation</h1>
         <p class="lead">A non-profit organization established in the spirit of humanity, generosity, and goodness, structured with defined objectives to provide social services through personal efforts, partnerships, and collaborations.</p>
-        <a href="#partnership" class="btn btn-primary btn-lg mt-3"><i class="bi bi-box-arrow-in-left"></i> Partner With Us</a>
+
+        @if($hasJobs)
+            <div class="job-cta d-flex justify-content-center align-items-center gap-3 mb-3">
+                <div class="text-start">
+                    <h5 class="mb-0">We're hiring!</h5>
+                    <small>Explore current open positions and apply today.</small>
+                </div>
+                <a href="{{ route('job.index') }}" class="btn btn-warning btn-lg"><i class="bi bi-box-arrow-in-right"></i> View Open Positions</a>
+            </div>
+        @endif
+
     </div>
 </header>
 
